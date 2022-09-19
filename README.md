@@ -1,1 +1,1 @@
-# CSC-4243-Project
+# csc-4243-project
