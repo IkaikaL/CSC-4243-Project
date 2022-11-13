@@ -1,0 +1,42 @@
+.CountStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ButtonStyle {
+    margin-right: 5px;
+}
+
+  
+  .btn-container {
+    display: flex;
+    flex-direction: 'row';
+    align-items: left;
+    background-color: #fff;
+    
+  }
+  
+  .btn {
+    border: none;
+    color:#fff;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: left;
+    gap:6px;
+    background-color: #bdc0c5;
+    margin: 2px;
+  }
+  
+  .like-active { 
+    background-color: #cbc2ff;
+  }
+  
+  .dislike-active { 
+    background-color: #cbc2ff;
+  }
+
+  .report-active {
+    background-color: rgb(255, 145, 145);
+  }

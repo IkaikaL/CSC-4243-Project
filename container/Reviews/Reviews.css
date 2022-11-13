@@ -1,0 +1,52 @@
+.section_relocation {
+    position: absolute;
+    top: 135px;
+    left: 300px;
+    max-width: 1000px;
+}
+
+.Review_Divider {
+    border-top: 2px solid rgb(177, 177, 177);
+    max-width: 1000px;
+}
+
+.Review_Container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    border: 1px solid black;
+    width: 600px;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-top: 13px;
+    text-align: left;
+}
+
+.topright_reviewbox {
+    max-width: max-content;
+    margin-left: 5px;
+    grid-column: 1;
+    grid-row: 2;
+
+}
+
+.stars {
+    font-size: 25px;
+    color: yellow;
+}
+
+.buyerid {
+   font-size: 13px; 
+}
+
+.dateid {
+    font-size: 12px;
+}
+
+.ReviewContent_Container {
+    max-width: 800px;
+    max-height: 800px;
+    grid-column: 2;
+    grid-row: 2;
+    margin: 10px;
+}
