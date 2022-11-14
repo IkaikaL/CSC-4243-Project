@@ -1,25 +1,15 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import ListingDetails from "./components/ListingDetails";
+
+const listingCategory = "for sale";
+const listingPrice = 50.50;
+const listingDetails = {subcategory: "appliances", condition: "used", quantity: 1, title: "", employment: ""}
 
 function App() {
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className='App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<ListingDetails mainCategory={listingCategory} price={listingPrice} details={listingDetails} />
 	);
 }
 
