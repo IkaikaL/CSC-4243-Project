@@ -93,7 +93,16 @@ const ListingDetails = (props: Props) => {
     }
 
     return (
-        <Container sx={{ width: "280px", background: "grey", height: "400px", padding: "4px", marginTop: "30px", marginLeft: "8px" }}>
+        <Container 
+            sx={{ 
+                width: "280px", 
+                background: "grey", 
+                height: "400px", 
+                padding: "4px", 
+                marginTop: "30px", 
+                marginLeft: "8px" 
+            }}
+        >
             <Grid
 				container
 				direction='column'

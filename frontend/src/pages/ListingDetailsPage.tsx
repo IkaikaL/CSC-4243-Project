@@ -25,6 +25,7 @@ const imgPaths = [
 const ListingDetailsPage = () => {
     return (
         <Container 
+            disableGutters
             sx={{ minWidth: "100%", minHeight: "1000px", backgroundColor: "#1E1E1E" }}
         >
             <Grid
@@ -32,7 +33,7 @@ const ListingDetailsPage = () => {
                 direction="column"
                 alignItems="center"
                 justifyContent="center"
-                sx={{ width: "1000px"}}
+                sx={{ width: "100%" }}
             >
                 <Grid item>
                     "Header"
