@@ -4,6 +4,7 @@ import { Grid, Container } from "@mui/material";
 import HomePageHeader from "../components/HomePageHeader";
 import MainCategories from "../components/MainCategories";
 import SubCategories from "../components/SubCategories";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
 	const [category, setCategory] = useState("");
@@ -277,6 +278,9 @@ const HomePage = () => {
 					sx={{ width: "100%", minHeight: "100px", backgroundColor: "#1E1E1E" }}
 				>
 					{subCategories}
+				</Grid>
+				<Grid item sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
+					<Footer />
 				</Grid>
 			</Grid>
 		</Container>

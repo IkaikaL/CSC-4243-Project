@@ -14,10 +14,10 @@ const MainCategories = (props: Props) => {
 				direction='row'
 				justifyContent='center'
 				alignItems='center'
-				sx={{ width: "100%", height: "500px" }}
+				sx={{ width: "100%", height: "350px" }}
 			>
 				{categoryList.map((item) => (
-					<Grid item sx={{ width: "300px", height: "150px", padding: "10px" }}>
+					<Grid item sx={{ width: "200px", height: "150px", padding: "5px" }}>
 						<Button
 							variant='contained'
 							sx={{

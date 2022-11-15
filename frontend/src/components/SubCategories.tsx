@@ -11,7 +11,7 @@ const SubCategories = (props: Props) => {
 		<Container
 			sx={{
 				width: "1000px",
-				minHeight: "200px",
+				minHeight: "100px",
 				backgroundColor: "gray",
 				padding: "10px",
 			}}
