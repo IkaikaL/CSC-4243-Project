@@ -5,6 +5,7 @@ import HomePageHeader from "../components/HomePageHeader";
 import MainCategories from "../components/MainCategories";
 import ListingPageSearchBar from "../components/ListingPageSearchBar";
 import ListingPageListings from "../components/ListingPageListings";
+import ListingPageChange from "../components/ListingPageChange";
 
 const Listings = () => {
 	const [category, setCategory] = useState("");
@@ -32,25 +33,27 @@ const Listings = () => {
 				</Grid>
 				<Grid
 					item
+					alignItems='center'
 					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E", marginBottom:"8px" }}
 				>
 					<ListingPageSearchBar/>
 				</Grid>
 				<Grid
 					item
-					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E" }}
+					alignItems='center'
+					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E", marginBottom:"650px" }}
 				>
-					<ListingPageListings
-						
-					/>
+					<ListingPageListings/>
 				</Grid>
 				<Grid
-					item
-					sx={{ width: "100%", minHeight: "100px", backgroundColor: "#1E1E1E" }}
-				>
+					item sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
 				
+				<ListingPageChange/>	
 				</Grid>
+				
 			</Grid>
+			
+			
 		</Container>
 	);
 };

@@ -15,6 +15,12 @@ import { Height } from "@mui/icons-material";
 type Props = {
 }
 
+// declare global {
+// 	listingNum;
+//   }
+  
+//   export {};
+
 const Listings = [
 	{listingTitle: "Bingo's Lawncare Service",
 	listingLocation: "Baton Rouge",
@@ -56,11 +62,9 @@ const Listings = [
 	listingLocation: "Massagetown",
 	listingDatePosted: "09/09/21",
 	image: michael},
-	
-
 ];
 
-
+// listingNum = Listings.length;
 
 const ListingPageListings = (props: Props) => {
 	
@@ -82,7 +86,7 @@ const ListingPageListings = (props: Props) => {
 							sx={{
 								width: "100%",
 								height: "100%",
-								backgroundColor: "#5d8c55",
+								backgroundColor: "grey",
 								"&:hover": { backgroundColor: "#5d8c55" },
 							}}
 							onClick={() => {
