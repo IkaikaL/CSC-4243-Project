@@ -11,7 +11,8 @@ const HomePageHeader = (props: Props) => {
 			sx={{
 				height: "60px",
 				width: "1000px",
-				padding: "10px",
+				paddingTop: "10px",
+				paddingBottom: "10px",
 			}}
 		>
 			<Grid
@@ -22,18 +23,17 @@ const HomePageHeader = (props: Props) => {
 				sx={{ height: "100%" }}
 			>
 				<Grid item sx={{ width: "100px" }}>
-					<Button
-						variant='contained'
-						sx={{
-							backgroundColor: "#5d8c55",
-							"&:hover": { backgroundColor: "#5d8c55" },
-						}}
-						onClick={() => {
-							alert("clicked");
-						}}
-					>
-						<Typography>Calendar</Typography>
-					</Button>
+					<a href='https://batonrouge.craigslist.org/search/eee#search=1~list~0~0'>
+						<Button
+							variant='contained'
+							sx={{
+								backgroundColor: "#5d8c55",
+								"&:hover": { backgroundColor: "#5d8c55" },
+							}}
+						>
+							<Typography>Calendar</Typography>
+						</Button>
+					</a>
 				</Grid>
 				<Grid
 					item
