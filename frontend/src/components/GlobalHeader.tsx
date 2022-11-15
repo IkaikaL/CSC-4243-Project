@@ -1,5 +1,13 @@
 import React from "react";
-import { Container, Grid, Typography, Button, TextField } from "@mui/material";
+import {
+	Container,
+	Grid,
+	Typography,
+	Button,
+	TextField,
+	Box,
+} from "@mui/material";
+import logo from "./Files/KC- K.png";
 
 const GlobalHeader = () => {
 	return (
@@ -18,8 +26,13 @@ const GlobalHeader = () => {
 				alignItems='center'
 				sx={{ height: "100%" }}
 			>
-				<Grid item sx={{ width: "100px" }}>
-					<Typography sx={{ color: "white" }}>LOGO</Typography>
+				<Grid item sx={{ width: "50px" }}>
+					<Box
+						component='img'
+						sx={{ height: "40px", width: "40px" }}
+						alt='logo'
+						src={logo}
+					/>
 				</Grid>
 				<Grid item sx={{ width: "110px" }}>
 					<Typography sx={{ color: "white" }}> KevinsCatalog</Typography>
