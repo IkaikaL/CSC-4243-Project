@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Container } from "@mui/material";
 
-import HomePageHeader from "../components/HomePageHeader";
-import MainCategories from "../components/MainCategories";
+import GlobalHeader from "../components/GlobalHeader";
 import ListingPageSearchBar from "../components/ListingPageSearchBar";
 import ListingPageListings from "../components/ListingPageListings";
 import ListingPageChange from "../components/ListingPageChange";
@@ -29,7 +28,7 @@ const Listings = () => {
 					justifyContent='center'
 					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E" }}
 				>
-					<HomePageHeader location='Baton Rouge' />
+					<GlobalHeader />
 				</Grid>
 				<Grid
 					item
@@ -41,7 +40,7 @@ const Listings = () => {
 				<Grid
 					item
 					alignItems='center'
-					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E", marginBottom:"650px" }}
+					sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E" }}
 				>
 					<ListingPageListings/>
 				</Grid>

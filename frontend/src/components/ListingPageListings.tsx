@@ -77,10 +77,10 @@ const ListingPageListings = (props: Props) => {
 				direction='row'
 				justifyContent='center'
 				alignItems='center'
-				sx={{ width: "1000px", height: "100px" }}
+				sx={{ width: "100%", height: "800px" }}
 			>
 				{(Listings).map((listing, index) => (
-					<Grid item xs={6} sx={{ width: "500px", height: "150px", padding: "10px" }}>
+					<Grid item xs={6} sx={{ width: "500px", height: "150px", padding: "5px" }}>
 						<Button
 							variant='contained'
 							sx={{

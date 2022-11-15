@@ -11,33 +11,48 @@ const Footer = () => {
 				alignItems='center'
 			>
 				<Grid item>
-					<a href="">
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}>First</Button>
-					</a>
+					
+						<Button variant="contained" component="label" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }} 
+                        onClick={() => {
+								alert("clicked");
+							}}>First</Button>
+					
 				</Grid>
 				<Grid item>
-					<a href=''>
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}>Prev</Button>
-					</a>
+					
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+                        onClick={() => {
+                            alert("clicked");
+                        }}>Prev</Button>
+					
 				</Grid>
 				<Grid item>
-					<a href=''>
-						<Button variant="contained" sx={{ width: "200px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}>1-8 of 8</Button>
-					</a>
+					
+						<Button variant="contained" sx={{ width: "200px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+                        onClick={() => {
+                            alert("clicked");
+                        }}>1-8 of 8</Button>
+					
 				</Grid>
 				<Grid item>
-					<a href=''>
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}>
+					
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+                        onClick={() => {
+                            alert("clicked");
+                        }}>
 							Next
 						</Button>
-					</a>
+					
 				</Grid>
                 <Grid item>
-					<a href=''>
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}>
+					
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+                        onClick={() => {
+                            alert("clicked");
+                        }}>
 							Last
 						</Button>
-					</a>
+					
 				</Grid>
 			</Grid>
 		</Container>
