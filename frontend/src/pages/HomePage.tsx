@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Grid, Container } from "@mui/material";
 
+import GlobalHeader from "../components/GlobalHeader";
 import HomePageHeader from "../components/HomePageHeader";
 import MainCategories from "../components/MainCategories";
 import SubCategories from "../components/SubCategories";
@@ -251,6 +252,7 @@ const HomePage = () => {
 			disableGutters={true}
 			sx={{ minWidth: "100%", minHeight: "1000px", backgroundColor: "#1E1E1E" }}
 		>
+			<GlobalHeader />
 			<Grid
 				container
 				direction='column'
