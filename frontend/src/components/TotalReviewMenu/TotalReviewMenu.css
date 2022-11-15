@@ -1,0 +1,103 @@
+.entiresection {
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    max-width: max-content;
+    max-height: max-content;
+}
+
+.main {
+    text-align: left;
+    border-bottom: 1px solid black;
+    max-width: 275px;
+    max-height: max-content;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.submain{
+        text-align: left;
+        max-width: 275px;
+        max-height: max-content;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        
+}
+
+.TitleFormat {
+    letter-spacing: 0.2px;
+    font-size: 18pt;
+    margin: auto;
+}
+
+.StarFormat {
+    font-size: 30pt;
+    margin: auto;
+}
+
+.NumProduct {
+    font-size: 22pt;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.ReviewSeller_title {
+    font-size: 15pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Submit_Review {
+    border: 2px solid black;
+    max-width: 240px;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.Submit_Review a:hover {
+    background-color: rgb(189, 189, 189);
+}
+
+.sellertitle {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 275px;
+    max-height: max-content;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sellerprofile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 240px;
+    height: 110px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 70px auto;
+    column-gap: 0em;
+
+}
+
+.sellerprofileIMGwindow {
+    border: 1px solid black;
+    max-width: 50px;
+    max-height: 50px;
+    margin: 10px;
+}
+
+.sellerprofileIMG {
+    text-align: center;
+    font-size: 19px;
+}
+
+.sellerusername {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 16px;
+}
