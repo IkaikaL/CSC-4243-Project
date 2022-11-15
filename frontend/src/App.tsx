@@ -1,13 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import ListingDetailsPage from "./pages/ListingDetailsPage";
-
+import HomePage from "./pages/HomePage";
+import { Container } from "@mui/material";
 
 function App() {
-
 	return (
-		<ListingDetailsPage/>
+		<Container
+			sx={{ minWidth: "100%", minHeight: "100%" }}
+			disableGutters={true}
+		>
+			<HomePage />
+		</Container>
 	);
 }
 
