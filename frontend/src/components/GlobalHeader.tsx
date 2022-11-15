@@ -26,7 +26,7 @@ const GlobalHeader = () => {
 				alignItems='center'
 				sx={{ height: "100%" }}
 			>
-				<Grid item sx={{ width: "100px" }}>
+				<Grid item sx={{ width: "50px" }}>
 					<Box
 						component='img'
 						sx={{ height: "40px", width: "40px" }}
