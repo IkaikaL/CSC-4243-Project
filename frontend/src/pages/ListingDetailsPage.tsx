@@ -3,23 +3,23 @@ import ListingDescription from "../components/ListingDescription";
 import ListingTitleGallery from "../components/ListingTitleGallery";
 import ListingDetails from "../components/ListingDetails";
 
+// https://batonrouge.craigslist.org/spo/7549043786.html
 const listingCategory = "for sale";
-const listingPrice = 50.50;
-const listingDetails = {subcategory: "appliances", condition: "used", quantity: 1, title: "", employment: ""}
+const listingPrice = 700;
+const listingDetails = {subcategory: "sporting", condition: "used", quantity: 1, title: "", employment: ""}
 
-const testDescription = {description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", publishDate: "01/01/2022"};
+const testDescription = {description: "in GREAT Shape , never been in the water. Christmas Gift that has been stored since getting. 11-1/2 feet long", publishDate: "10/23/2022"};
 const seller = {username: "NotARobot", profileImagePath:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jHuJyHBQHuvP9BaqeSEdYAHaFg%26pid%3DApi&f=1&ipt=81fef1be5a99d7a59d8923a01c891943774666ff4c4519667b31f76f65442703&ipo=images"};
 
 const title = "Test Listing";
 const imgPaths = [
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000010/1.png",
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000009/2.png",
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000008/3.png",
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000010/1.png",
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000009/2.png",
-	"https://media.geeksforgeeks.org/wp-content/uploads/20210208000008/3.png",
-	"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-KfJwNqD1VIU%2FXJcKmrIONtI%2FAAAAAAAACmM%2FJRDoWK5ieK0X9O-rO9x5jpqooyxPJu82QCLcBGAs%2Fw1200-h630-p-k-no-nu%2Fflex.png&f=1&nofb=1&ipt=66f56b5ee96a9aee083880bdd9074b660cb07b73708c88debc7dd3d451d30de6&ipo=images",
-	"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fraw.githubusercontent.com%2FAndreYonadam%2Freact-native-scrolling-images%2Fmaster%2Fdemo%2Fup.gif&f=1&nofb=1&ipt=77276749d8446a8adfecd205bdd937d725e160d6b57fd36b691bcd9249f519be&ipo=images"
+    "https://images.craigslist.org/00909_kqnMb9JkMA6z_0CI0t2_1200x900.jpg",
+    "https://images.craigslist.org/00u0u_dDZCE6wqufRz_0CI0t2_1200x900.jpg",
+    "https://images.craigslist.org/00s0s_4cGrEMEzO2ez_0CI0t2_1200x900.jpg",
+    "https://images.craigslist.org/00202_7KveBV9V2tKz_0t20CI_1200x900.jpg",
+    "https://images.craigslist.org/00U0U_cpBV7viBzjRz_0CI0t2_1200x900.jpg",
+    "https://images.craigslist.org/00Z0Z_543ch9F8XATz_0CI0t2_1200x900.jpg",
+    "https://images.craigslist.org/00o0o_4AMLksNYePnz_0t20CI_1200x900.jpg"
 ];
 
 const ListingDetailsPage = () => {
@@ -33,7 +33,7 @@ const ListingDetailsPage = () => {
                 direction="column"
                 alignItems="center"
                 justifyContent="center"
-                sx={{ width: "100%" }}
+                sx={{ width: "100%"}}
             >
                 <Grid item>
                     "Header"
@@ -44,17 +44,16 @@ const ListingDetailsPage = () => {
                     container 
                     direction="row"
                     alignItems="center"
-                    justifyContent="center"
-                    sx={{ width: "100%" }}
+                    sx={{ width: "1000px" }}
                 >
-                    <Grid item sx={{ width: "60%" }}>
+                    <Grid item sx={{ width: "69%" }}>
                         <ListingTitleGallery listingTitle={title} listingImagePaths={imgPaths} />
                     </Grid>
-                    <Grid item justifyContent="left">
+                    <Grid item justifyContent="right">
                         <ListingDetails mainCategory={listingCategory} price={listingPrice} details={listingDetails} />
                     </Grid>
                 </Grid>
-                <Grid item sx={{ width: "100%" }}>
+                <Grid item sx={{ width: "1000px" }}>
                     <ListingDescription seller={seller} listingDesc={testDescription} />
                 </Grid>
             </Grid>

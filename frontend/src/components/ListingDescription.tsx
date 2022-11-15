@@ -25,7 +25,7 @@ const ListingDescription = (props: Props) => {
             </Typography>
 
             <Container 
-                sx={{ width: "100%", background: "grey" }}
+                sx={{ width: "100%", minHeight: "200px", background: "grey" }}
             >
                 <Grid container
                     direction="row"

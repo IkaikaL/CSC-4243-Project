@@ -29,10 +29,10 @@ const ListingTitleGallery = (props: Props) => {
                 {/* Main Pic */}
                 <Grid item 
                     sx={{ 
-                        width: "60%",
+                        width: "70%",
                         height: "400px",
                         outline: "black 2px solid",
-                        background: "lightGrey"
+                        background: "grey"
                     }}
                 >
                     <img src={listingImagePaths[index]}
