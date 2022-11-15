@@ -40,6 +40,7 @@ const GlobalHeader = () => {
 						size='small'
 						color='primary'
 						sx={{
+							input: { color: "white" },
 							width: "300px",
 							"& .MuiInputLabel-root": { color: "white" },
 							"& .MuiOutlinedInput-root": {
