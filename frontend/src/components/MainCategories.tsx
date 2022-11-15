@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Grid, Typography, Card, Button } from "@mui/material";
 type Props = {
 	categoryList: Array<string>;
+	setCategory: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const MainCategories = (props: Props) => {
-	const { categoryList } = props;
+	const { categoryList, setCategory } = props;
 	return (
 		<Container sx={{ width: "1000px" }}>
 			<Grid
@@ -13,10 +14,10 @@ const MainCategories = (props: Props) => {
 				direction='row'
 				justifyContent='center'
 				alignItems='center'
-				sx={{ width: "1000px", height: "500px" }}
+				sx={{ width: "100%", height: "350px" }}
 			>
 				{categoryList.map((item) => (
-					<Grid item sx={{ width: "300px", height: "150px", padding: "10px" }}>
+					<Grid item sx={{ width: "200px", height: "150px", padding: "5px" }}>
 						<Button
 							variant='contained'
 							sx={{
@@ -26,10 +27,10 @@ const MainCategories = (props: Props) => {
 								"&:hover": { backgroundColor: "#5d8c55" },
 							}}
 							onClick={() => {
-								alert("clicked");
+								setCategory(item);
 							}}
 						>
-							<Typography textAlign={"center"} sx={{ margin: "60px" }}>
+							<Typography textAlign={"center"} sx={{}}>
 								{item}
 							</Typography>
 						</Button>

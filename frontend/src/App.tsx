@@ -4,7 +4,6 @@ import "./App.css";
 import ListingDetailsPage from "./pages/ListingDetailsPage";
 
 
-
 function App() {
 
 	return (
