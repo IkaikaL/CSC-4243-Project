@@ -40,7 +40,7 @@ const ListingDetails = (props: Props) => {
         }
         
         return (
-            <Typography>
+            <Typography color="white">
                 {priceStr}
             </Typography>
         );
@@ -51,24 +51,24 @@ const ListingDetails = (props: Props) => {
         if (priceCategories.includes(mainCategory)) {
             extraRows = [
                 (<TableRow>
-                    <TableCell>Condition</TableCell>
-                    <TableCell>{details.condition}</TableCell> 
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>Condition</Typography></TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>{details.condition}</Typography></TableCell> 
                 </TableRow>),
                 (<TableRow>
-                    <TableCell>Quantity</TableCell>
-                    <TableCell>{details.quantity}</TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>Quantity</Typography></TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>{details.quantity}</Typography></TableCell>
                 </TableRow>)
             ];
         }
         else if (wageCategories.includes(mainCategory)) {
             extraRows = [
                 (<TableRow>
-                    <TableCell>Title</TableCell>
-                    <TableCell>{details.title}</TableCell> 
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>Title</Typography></TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>{details.title}</Typography></TableCell> 
                 </TableRow>),
                 (<TableRow>
-                    <TableCell>Employment</TableCell>
-                    <TableCell>{details.employment}</TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>Employment</Typography></TableCell>
+                    <TableCell><Typography color="white" sx={{ height: "10px" }}>{details.employment}</Typography></TableCell>
                 </TableRow>)
             ];
         }
@@ -83,8 +83,8 @@ const ListingDetails = (props: Props) => {
             >
                 <TableBody>
                     <TableRow>
-                        <TableCell>Subcategory</TableCell>
-                        <TableCell>{details.subcategory}</TableCell>
+                        <TableCell><Typography color="white" sx={{ height: "10px" }}>Subcategory</Typography></TableCell>
+                        <TableCell><Typography color="white" sx={{ height: "10px" }}>{details.subcategory}</Typography></TableCell>
                     </TableRow>
                     {extraRows}
                 </TableBody>
@@ -93,7 +93,7 @@ const ListingDetails = (props: Props) => {
     }
 
     return (
-        <Container sx={{ width: "250px", background: "lightGrey" }}>
+        <Container sx={{ width: "280px", background: "grey", height: "400px", padding: "4px", marginTop: "30px", marginLeft: "8px" }}>
             <Grid
 				container
 				direction='column'
@@ -117,7 +117,7 @@ const ListingDetails = (props: Props) => {
                 </Grid>
 
                 <Grid item>
-                    <Typography>
+                    <Typography color="white" sx={{ marginTop: "8px", marginBottom: "0px" }}>
                         Key Details
                     </Typography>
                 </Grid>

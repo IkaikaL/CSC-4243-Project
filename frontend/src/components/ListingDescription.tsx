@@ -20,7 +20,7 @@ const ListingDescription = (props: Props) => {
     
     return (
         <Container sx={{ width: "1000px" }}>
-            <Typography variant="h6" component="h2">
+            <Typography variant="h6" component="h2" color="white">
                 Description
             </Typography>
 
@@ -48,12 +48,12 @@ const ListingDescription = (props: Props) => {
                         >
                             <Grid item sx={{ padding: "4px" }} container>
                                 <Grid item>
-                                    <Typography align="left">
+                                    <Typography align="left" color="white">
                                         Uploaded By: {seller.username}
                                     </Typography>
                                 </Grid>
                                 <Grid item sx={{ marginLeft: "auto" }}>
-                                    <Typography align="right">
+                                    <Typography align="right" color="white">
                                         Published On: {listingDesc.publishDate}
                                     </Typography>
                                 </Grid>
@@ -61,7 +61,7 @@ const ListingDescription = (props: Props) => {
                             <Divider sx={{ background: "black", borderBottomWidth: "4px" }} />
 
                             <Grid item>
-                                <Typography>
+                                <Typography color="white">
                                     {listingDesc.description}
                                 </Typography>
                             </Grid>

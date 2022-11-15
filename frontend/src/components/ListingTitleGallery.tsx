@@ -15,8 +15,8 @@ const ListingTitleGallery = (props: Props) => {
     };
 
     return (
-        <Container sx={{ width: "1000px" }}>
-            <Typography variant="h6" component="h2">
+        <Container sx={{ width: "800px" }}>
+            <Typography variant="h5" component="h1" color="white">
                 {listingTitle}
             </Typography>
 
@@ -29,7 +29,7 @@ const ListingTitleGallery = (props: Props) => {
                 {/* Main Pic */}
                 <Grid item 
                     sx={{ 
-                        width: "600px",
+                        width: "60%",
                         height: "400px",
                         outline: "black 2px solid",
                         background: "lightGrey"
