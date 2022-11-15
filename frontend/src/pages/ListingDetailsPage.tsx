@@ -2,6 +2,7 @@ import { Container, Grid } from "@mui/material";
 import ListingDescription from "../components/ListingDescription";
 import ListingTitleGallery from "../components/ListingTitleGallery";
 import ListingDetails from "../components/ListingDetails";
+import GlobalHeader from "../components/GlobalHeader";
 
 // https://batonrouge.craigslist.org/spo/7549043786.html
 const listingCategory = "for sale";
@@ -11,7 +12,7 @@ const listingDetails = {subcategory: "sporting", condition: "used", quantity: 1,
 const testDescription = {description: "in GREAT Shape , never been in the water. Christmas Gift that has been stored since getting. 11-1/2 feet long", publishDate: "10/23/2022"};
 const seller = {username: "NotARobot", profileImagePath:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jHuJyHBQHuvP9BaqeSEdYAHaFg%26pid%3DApi&f=1&ipt=81fef1be5a99d7a59d8923a01c891943774666ff4c4519667b31f76f65442703&ipo=images"};
 
-const title = "Test Listing";
+const title = "Kayak for sale";
 const imgPaths = [
     "https://images.craigslist.org/00909_kqnMb9JkMA6z_0CI0t2_1200x900.jpg",
     "https://images.craigslist.org/00u0u_dDZCE6wqufRz_0CI0t2_1200x900.jpg",
@@ -36,7 +37,7 @@ const ListingDetailsPage = () => {
                 sx={{ width: "100%"}}
             >
                 <Grid item>
-                    "Header"
+                    <GlobalHeader/>
                 </Grid>
 
                 <Grid 
