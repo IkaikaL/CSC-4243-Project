@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Grid, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 type Props = {
 	mainCategory: string;
 	subCategory?: string[];
@@ -7,6 +8,7 @@ type Props = {
 
 const SubCategories = (props: Props) => {
 	const { mainCategory, subCategory } = props;
+	const navigate = useNavigate();
 	return (
 		<Container
 			sx={{
@@ -35,7 +37,7 @@ const SubCategories = (props: Props) => {
 									"&:hover": { backgroundColor: "#5d8c55" },
 								}}
 								onClick={() => {
-									alert("clicked");
+									navigate("/listings");
 								}}
 							>
 								<Typography textAlign={"center"} sx={{}}>
