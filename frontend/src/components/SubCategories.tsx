@@ -14,8 +14,8 @@ const SubCategories = (props: Props) => {
 			sx={{
 				width: "1000px",
 				minHeight: "100px",
-				backgroundColor: "gray",
 				padding: "10px",
+				color: "white",
 			}}
 		>
 			<Typography variant='h5'> In: {mainCategory}</Typography>
@@ -31,10 +31,11 @@ const SubCategories = (props: Props) => {
 							<Button
 								variant='contained'
 								sx={{
+									color: "white",
 									width: "100%",
 									height: "100%",
-									backgroundColor: "#5d8c55",
-									"&:hover": { backgroundColor: "#5d8c55" },
+									backgroundColor: "#423F3E",
+									"&:hover": { backgroundColor: "#362222" },
 								}}
 								onClick={() => {
 									navigate("/listings");

@@ -38,7 +38,9 @@ const GlobalHeader = () => {
 					<Typography sx={{ color: "white" }}> KevinsCatalog</Typography>
 				</Grid>
 				<Grid item>
-					<Button variant='outlined'>Create Post</Button>
+					<a href='https://post.craigslist.org/k/MhndxVRz7RGL4TPzqQVWcA/rqgID?s=type'>
+						<Button variant='outlined'>Create Post</Button>
+					</a>
 				</Grid>
 				<Grid
 					item
