@@ -29,14 +29,14 @@
     margin: 2px;
   }
   
-  .like-active { 
-    background-color: #cbc2ff;
+ .like-active { 
+    background-color: #00ff2a;
   }
   
   .dislike-active { 
-    background-color: #cbc2ff;
+    background-color: #ff0000;
   }
 
   .report-active {
-    background-color: rgb(255, 145, 145);
+    background-color: rgb(255, 107, 107);
   }
