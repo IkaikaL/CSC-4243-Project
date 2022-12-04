@@ -1,8 +1,7 @@
-import React from 'react'
-import './TotalReviewMenu.css';
 import StarIcon from '@mui/icons-material/Star';
 import PersonIcon from '@mui/icons-material/Person';
-
+import { Button, Grid} from "@mui/material";
+import Paper from '@mui/material/Paper';
 const text = 'Customer Reviews';
 
 function SellerInfo (props: any) {
@@ -13,31 +12,56 @@ function SellerInfo (props: any) {
   );
 }
 
+const classes = {
+  paper: {
+      p:0.5,
+      marginBottom: '10px',
+      backgroundColor: 'white',
+      padding: '10px',
+      width: '230px',
+
+  },
+
+  starUpColor: {
+    color: 'yellow',
+  },
+}
+
 export default function TotalReviewMenu() {
   return (
-    <nav className = 'entiresection'>
-    <div className = 'main' >
-      <b className = 'TitleFormat' >Customer Reviews</b>
-      <p className = 'StarFormat' ><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></p> 
-      <p className ='NumProduct' >Product Ratings</p>
-    </div>
-    <div className = 'main'>
-      <b className='ReviewSeller_title'>Review this seller</b>
-      <p>Please share your thoughts with others.</p>
-      <p className= 'Submit_Review'> <a href = "/reviewbutton">Submit a Review </a></p>
 
-    </div>
-    <div className = 'submain'>
+    <Paper style = {classes.paper}>
+      <b>Customer Reviews</b>
+      <Grid sx = {{borderBottom: '1.5px solid gray'}}>
+        <p style = {classes.starUpColor}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></p> 
+        <p className ='NumProduct' >Product Ratings</p>
+      </Grid>
+
+      <Grid sx = {{borderBottom: '1.5px solid gray', paddingBottom: '10px', paddingTop: ''}} >
+        <b className='ReviewSeller_title'>Review this seller</b>
+        <p>Please share your thoughts with others.</p>
+
+        <Grid style = {{textAlign: 'center'}}>
+          <Button
+          style = {{background: 'lightgray', color: 'black'}} >
+          Submit a Review
+          </Button>
+          {/* <p className= 'Submit_Review'> <a href = "/reviewbutton">Submit a Review </a></p> */}
+        </Grid>
+      </Grid>
       <p className = 'sellertitle'>Seller Profile</p>
-      <div className = 'sellerprofile' >
-        <div className='sellerprofileIMGwindow'>
+      <Grid
+      container direction = 'row'
+      style = {{border: '1px solid grey', paddingLeft: '5px', paddingBottom: '10px', paddingTop: '10px'}}>
+        <Grid
+        style = {{border: '1px solid black', height: '50px', width: '50px', textAlign: 'center'}}>
           <p className = 'sellerprofileIMG'><PersonIcon /></p>
-        </div>
-        <div className = 'sellerusername'>
-        <SellerInfo name = "Riley47768" date = "Oct. 4, 2016"/>
-        </div>
-      </div>
-    </div>
-    </nav>
+        </Grid>
+        <Grid style = {{fontSize: '13px', paddingLeft: '5px'}}>
+          <SellerInfo name = "Riley47768" date = "Oct. 4, 2016"/>
+        </Grid>
+      </Grid>
+    </Paper>
+
   );
 }
