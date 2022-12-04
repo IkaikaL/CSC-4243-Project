@@ -18,7 +18,6 @@ const SubCategories = (props: Props) => {
 				color: "white",
 			}}
 		>
-			<Typography variant='h5'> In: {mainCategory}</Typography>
 			<Grid
 				container
 				direction='row'
@@ -27,7 +26,7 @@ const SubCategories = (props: Props) => {
 			>
 				{subCategory !== undefined ? (
 					subCategory.map((item) => (
-						<Grid item sx={{ width: "200px", height: "80px", padding: "10px" }}>
+						<Grid item sx={{ width: "155px", height: "80px", padding: "10px" }}>
 							<Button
 								variant='contained'
 								sx={{
@@ -41,7 +40,7 @@ const SubCategories = (props: Props) => {
 									navigate("/listings");
 								}}
 							>
-								<Typography textAlign={"center"} sx={{}}>
+								<Typography textAlign={"center"} sx={{ fontSize: "15px" }}>
 									{item}
 								</Typography>
 							</Button>

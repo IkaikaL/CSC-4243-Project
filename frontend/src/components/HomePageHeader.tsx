@@ -44,6 +44,7 @@ const HomePageHeader = (props: Props) => {
 						padding: "8px",
 						backgroundColor: "#423F3E",
 						color: "white",
+						borderRadius: "3px",
 					}}
 				>
 					<Typography textAlign={"center"}>{location}</Typography>
