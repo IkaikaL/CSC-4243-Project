@@ -38,24 +38,28 @@ const Reviews = (props: Props) => {
 							minWidth: "100%",
 						}}
 					>
-						{item.stars === 1 ? <StarIcon /> : null}
+						{item.stars === 1 ? (
+							<Container disableGutters={true} sx={{ color: "yellow" }}>
+								<StarIcon />
+							</Container>
+						) : null}
 						{item.stars === 2 ? (
-							<Container disableGutters={true}>
+							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon />
 							</Container>
 						) : null}
 						{item.stars === 3 ? (
-							<Container disableGutters={true}>
+							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
 						{item.stars === 4 ? (
-							<Container disableGutters={true}>
+							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
 						{item.stars === 5 ? (
-							<Container disableGutters={true}>
+							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
