@@ -1,10 +1,10 @@
-import TotalReviewMenu from '../components/TotalReviewMenu/TotalReviewMenu'
-import GlobalHeader from '../components/GlobalHeader';
-import SortButton from '../components/SortButton/SortButton';
-import Reviews from '../components/Reviews/Reviews';
+import TotalReviewMenu from "../components/TotalReviewMenu/TotalReviewMenu";
+import GlobalHeader from "../components/GlobalHeader";
+import SortButton from "../components/SortButton/SortButton";
+import Reviews from "../components/Reviews/Reviews";
 import { Grid, Container } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from "@emotion/react";
 import Footer from "../components/Footer";
 
 const theme = createTheme({
@@ -12,64 +12,92 @@ const theme = createTheme({
 		primary: {
 			main: "#ffffff",
 		},
-		secondary: {
-			main: "#5d8c55",
-		},
 	},
 });
-
+const reviewDetails = [
+	{
+		name: "boatluver1855",
+		date: "Nov. 18, 2019",
+		verified: true,
+		message:
+			"Merchandise was well kept. Very knowledgable on engines. Would buy from again.",
+		stars: 5,
+	},
+	{
+		name: "mmregan511",
+		date: "Jan. 6, 2021",
+		verified: true,
+		message:
+			"Arrived at the place to take a look at his stuff. Didn't tell me in advance that he was going to be late, so I ended up waiting for two hours before he got to our meeting location.",
+		stars: 2,
+	},
+	{
+		name: "jaxjil_xXx_4154",
+		date: "Jun. 19, 2021",
+		verified: true,
+		message:
+			"Got what I wanted. Case was damaged on the side, which wasn't told on the listing.",
+		stars: 3,
+	},
+];
 
 const CompleteReviewPage = () => {
-    return (
-        <ThemeProvider theme = {theme}>
-            <Container
-                    disableGutters={true}
-                    sx={{
-                        minWidth: "100%",
-                        minHeight: "100%",
-                        backgroundColor: "#1E1E1E",
-                        width: '1000px',
-                        height: '100%'}}
-                    style = {{border: "1px solid white"}}>
-                
-                <GlobalHeader />
-                <Container>
-                    <Grid
-                    justifyContent='start'
-                    container direction = 'row'
-                    sx = {{ paddingLeft: '100px', }}>
-                        <Grid
-                        sx={{ width: "200px", height: "350px", marginTop: '20px'}}
-                        style = {{border: "1px solid green"}}
-                        >
-                            <TotalReviewMenu />
-                        </Grid>
+	return (
+		<ThemeProvider theme={theme}>
+			<Container
+				disableGutters={true}
+				sx={{
+					minWidth: "100%",
+					minHeight: "1000px",
+					backgroundColor: "#1E1E1E",
+				}}
+			>
+				<Grid
+					container
+					direction='column'
+					justifyContent='center'
+					alignItems='center'
+					sx={{ width: "100%", height: "150%" }}
+				>
+					<Grid item>
+						<GlobalHeader />
+					</Grid>
 
-                        <Grid 
-                        sx = {{marginLeft: '40px'}}>
-                            <Grid item
-                            sx = {{ marginTop: '20px', marginLeft: '25px'}}
-                            >
-                                <SortButton />
-                            </Grid>
-                            
-                            <Grid item
-                            sx = {{ marginTop: '25px' , marginLeft: '15px'}}
-                            >
-                                <Reviews />
-                            </Grid>
-                        </Grid>
+					<Grid item>
+						<Grid
+							container
+							direction='row'
+							justifyContent='flex-start'
+							alignItems='flex-start'
+							sx={{ width: "1000px" }}
+						>
+							<Grid item sx={{ paddingRight: "10px" }}>
+								<TotalReviewMenu />
+							</Grid>
 
-                    </Grid>
-
-                    <Grid item>
-                        <Footer />
-                    </Grid>
-
-                </Container>
-            </Container>
-        </ThemeProvider>
-    )
+							<Grid item sx={{}}>
+								<SortButton />
+							</Grid>
+							<Grid
+								item
+								sx={{
+									width: "100px",
+									height: "700px",
+									paddingTop: "50px",
+									marginLeft: "-215px",
+								}}
+							>
+								<Reviews reviews={reviewDetails} />
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid item>
+						<Footer />
+					</Grid>
+				</Grid>
+			</Container>
+		</ThemeProvider>
+	);
 };
 
 export default CompleteReviewPage;
