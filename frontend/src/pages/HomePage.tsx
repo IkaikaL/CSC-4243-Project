@@ -13,9 +13,6 @@ const theme = createTheme({
 		primary: {
 			main: "#ffffff",
 		},
-		secondary: {
-			main: "#5d8c55",
-		},
 	},
 });
 const HomePage = () => {
@@ -294,6 +291,7 @@ const HomePage = () => {
 					<Grid
 						item
 						sx={{
+							paddingTop: "20px",
 							width: "100%",
 							minHeight: "100px",
 							backgroundColor: "#1E1E1E",

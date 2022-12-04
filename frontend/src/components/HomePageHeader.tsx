@@ -27,8 +27,9 @@ const HomePageHeader = (props: Props) => {
 						<Button
 							variant='contained'
 							sx={{
-								backgroundColor: "#5d8c55",
-								"&:hover": { backgroundColor: "#5d8c55" },
+								color: "white",
+								backgroundColor: "#423F3E",
+								"&:hover": { backgroundColor: "#362222" },
 							}}
 						>
 							<Typography>Calendar</Typography>
@@ -41,7 +42,9 @@ const HomePageHeader = (props: Props) => {
 						width: "600px",
 						height: "100%",
 						padding: "8px",
-						backgroundColor: "gray",
+						backgroundColor: "#423F3E",
+						color: "white",
+						borderRadius: "3px",
 					}}
 				>
 					<Typography textAlign={"center"}>{location}</Typography>

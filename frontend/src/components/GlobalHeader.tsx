@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
 	Container,
 	Grid,
@@ -10,6 +11,7 @@ import {
 import logo from "./Files/KC- K.png";
 
 const GlobalHeader = () => {
+	const navigate = useNavigate();
 	return (
 		<Container
 			sx={{
@@ -32,13 +34,18 @@ const GlobalHeader = () => {
 						sx={{ height: "40px", width: "40px" }}
 						alt='logo'
 						src={logo}
+						onClick={() => {
+							navigate("/");
+						}}
 					/>
 				</Grid>
 				<Grid item sx={{ width: "110px" }}>
 					<Typography sx={{ color: "white" }}> KevinsCatalog</Typography>
 				</Grid>
 				<Grid item>
-					<Button variant='outlined'>Create Post</Button>
+					<a href='https://post.craigslist.org/k/MhndxVRz7RGL4TPzqQVWcA/rqgID?s=type'>
+						<Button variant='outlined'>Create Post</Button>
+					</a>
 				</Grid>
 				<Grid
 					item

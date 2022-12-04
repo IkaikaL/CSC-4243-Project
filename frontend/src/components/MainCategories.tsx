@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Grid, Typography, Card, Button } from "@mui/material";
 type Props = {
 	categoryList: Array<string>;
@@ -7,6 +7,7 @@ type Props = {
 
 const MainCategories = (props: Props) => {
 	const { categoryList, setCategory } = props;
+	const [selected, setSelected] = useState("");
 	return (
 		<Container sx={{ width: "1000px" }}>
 			<Grid
@@ -14,20 +15,22 @@ const MainCategories = (props: Props) => {
 				direction='row'
 				justifyContent='center'
 				alignItems='center'
-				sx={{ width: "100%", height: "350px" }}
+				sx={{ width: "100%", height: "250px" }}
 			>
 				{categoryList.map((item) => (
-					<Grid item sx={{ width: "200px", height: "150px", padding: "5px" }}>
+					<Grid item sx={{ width: "200px", height: "100px", padding: "5px" }}>
 						<Button
 							variant='contained'
 							sx={{
+								color: "white",
 								width: "100%",
 								height: "100%",
-								backgroundColor: "#5d8c55",
-								"&:hover": { backgroundColor: "#5d8c55" },
+								backgroundColor: selected === item ? "#362222" : "#423F3E",
+								"&:hover": { backgroundColor: "#362222" },
 							}}
 							onClick={() => {
 								setCategory(item);
+								setSelected(item);
 							}}
 						>
 							<Typography textAlign={"center"} sx={{}}>
