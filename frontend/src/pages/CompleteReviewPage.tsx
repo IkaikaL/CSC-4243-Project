@@ -1,4 +1,3 @@
-import React from 'react';
 import TotalReviewMenu from '../components/TotalReviewMenu/TotalReviewMenu'
 import GlobalHeader from '../components/GlobalHeader';
 import SortButton from '../components/SortButton/SortButton';
@@ -27,33 +26,47 @@ const CompleteReviewPage = () => {
                     disableGutters={true}
                     sx={{
                         minWidth: "100%",
-                        minHeight: "1000px",
+                        minHeight: "100%",
                         backgroundColor: "#1E1E1E",
-                    }}
-                >
+                        width: '1000px',
+                        height: '100%'}}
+                    style = {{border: "1px solid white"}}>
+                
                 <GlobalHeader />
-                <Grid
-                    container
-					direction='column'
-					alignItems='center'
-					justifyContent='center'
-					sx={{ width: "100%", height: "150%", backgroundColor: "#1E1E1E" }}
-				>
-                    <Grid item
-                    sx={{ width: "200px", height: "100%", backgroundColor: "#1E1E1E" }}>
-                        <TotalReviewMenu />
+                <Container>
+                    <Grid
+                    justifyContent='start'
+                    container direction = 'row'
+                    sx = {{ paddingLeft: '100px', }}>
+                        <Grid
+                        sx={{ width: "200px", height: "350px", marginTop: '20px'}}
+                        style = {{border: "1px solid green"}}
+                        >
+                            <TotalReviewMenu />
+                        </Grid>
+
+                        <Grid 
+                        sx = {{marginLeft: '40px'}}>
+                            <Grid item
+                            sx = {{ marginTop: '20px', marginLeft: '25px'}}
+                            >
+                                <SortButton />
+                            </Grid>
+                            
+                            <Grid item
+                            sx = {{ marginTop: '25px' , marginLeft: '15px'}}
+                            >
+                                <Reviews />
+                            </Grid>
+                        </Grid>
+
                     </Grid>
+
                     <Grid item>
-                        <SortButton />
-                    </Grid>
-                    <Grid item>
-                        <Reviews />
-                    </Grid>
-                    <Grid item sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
                         <Footer />
                     </Grid>
-                </Grid>
-                
+
+                </Container>
             </Container>
         </ThemeProvider>
     )
