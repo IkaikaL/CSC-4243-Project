@@ -265,7 +265,7 @@ const HomePage = () => {
 					backgroundColor: "#1E1E1E",
 				}}
 			>
-				<GlobalHeader />
+				<GlobalHeader isListingList={false} />
 				<Grid
 					container
 					direction='column'

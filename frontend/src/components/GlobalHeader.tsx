@@ -10,7 +10,12 @@ import {
 } from "@mui/material";
 import logo from "./Files/KC- K.png";
 
-const GlobalHeader = () => {
+type Props = {
+	isListingList: boolean;
+};
+
+const GlobalHeader = (props: Props) => {
+	const { isListingList } = props;
 	const navigate = useNavigate();
 	return (
 		<Container
@@ -24,7 +29,7 @@ const GlobalHeader = () => {
 			<Grid
 				container
 				direction='row'
-				justifyContent='space-around'
+				justifyContent={isListingList ? "space-around" : "flex-start"}
 				alignItems='center'
 				sx={{ height: "100%" }}
 			>
@@ -42,53 +47,47 @@ const GlobalHeader = () => {
 				<Grid item sx={{ width: "110px" }}>
 					<Typography sx={{ color: "white" }}> KevinsCatalog</Typography>
 				</Grid>
-				<Grid item>
+				<Grid item sx={{ paddingLeft: isListingList ? "none" : "665px" }}>
 					<a href='https://post.craigslist.org/k/MhndxVRz7RGL4TPzqQVWcA/rqgID?s=type'>
 						<Button variant='outlined'>Create Post</Button>
 					</a>
 				</Grid>
-				<Grid
-					item
-					sx={{
-						width: "300px",
-						color: "white",
-					}}
-				>
-					<TextField
-						id='outlined-basic'
-						label='Search'
-						size='small'
-						color='primary'
-						sx={{
-							input: { color: "white" },
-							width: "300px",
-							"& .MuiInputLabel-root": { color: "white" },
-							"& .MuiOutlinedInput-root": {
-								"& > fieldset": { borderColor: "white", color: "white" },
-							},
-						}}
-					></TextField>
-				</Grid>
-				<Grid item>
-					<Button
-						variant='outlined'
-						sx={{
-							color: "white",
-						}}
-					>
-						Search
-					</Button>
-				</Grid>
-				<Grid item>
-					<Button
-						variant='outlined'
-						sx={{
-							color: "white",
-						}}
-					>
-						My Listings
-					</Button>
-				</Grid>
+				{isListingList ? (
+					<>
+						<Grid
+							item
+							sx={{
+								width: "300px",
+								color: "white",
+							}}
+						>
+							<TextField
+								id='outlined-basic'
+								label='Search'
+								size='small'
+								color='primary'
+								sx={{
+									input: { color: "white" },
+									width: "300px",
+									"& .MuiInputLabel-root": { color: "white" },
+									"& .MuiOutlinedInput-root": {
+										"& > fieldset": { borderColor: "white", color: "white" },
+									},
+								}}
+							></TextField>
+						</Grid>
+						<Grid item>
+							<Button
+								variant='outlined'
+								sx={{
+									color: "white",
+								}}
+							>
+								Search
+							</Button>
+						</Grid>
+					</>
+				) : null}
 			</Grid>
 		</Container>
 	);

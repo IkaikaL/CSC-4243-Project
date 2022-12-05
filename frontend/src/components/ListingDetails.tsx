@@ -131,7 +131,7 @@ const ListingDetails = (props: Props) => {
 		<Container
 			sx={{
 				width: "280px",
-				background: "grey",
+				background: "#2B2B2B",
 				height: "400px",
 				padding: "4px",
 				marginTop: "30px",
@@ -149,6 +149,11 @@ const ListingDetails = (props: Props) => {
 				<Grid item>{priceSpace()}</Grid>
 				<Grid item>
 					<Button
+						sx={{
+							backgroundColor: "#423F3E",
+							"&:hover": { backgroundColor: "#362222" },
+							color: "white",
+						}}
 						variant='contained'
 						onClick={() => {
 							navigate("/reviews");
@@ -158,7 +163,16 @@ const ListingDetails = (props: Props) => {
 					</Button>
 				</Grid>
 				<Grid item>
-					<Button variant='contained'>favorite</Button>
+					<Button
+						sx={{
+							backgroundColor: "#423F3E",
+							"&:hover": { backgroundColor: "#362222" },
+							color: "white",
+						}}
+						variant='contained'
+					>
+						favorite
+					</Button>
 				</Grid>
 
 				<Grid item>

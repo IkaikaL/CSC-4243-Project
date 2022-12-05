@@ -39,7 +39,7 @@ const Listings = () => {
 						justifyContent='center'
 						sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E" }}
 					>
-						<GlobalHeader />
+						<GlobalHeader isListingList={true} />
 					</Grid>
 					<Grid
 						item

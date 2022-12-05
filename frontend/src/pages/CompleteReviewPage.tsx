@@ -60,10 +60,10 @@ const CompleteReviewPage = () => {
 					sx={{ width: "100%", height: "150%" }}
 				>
 					<Grid item>
-						<GlobalHeader />
+						<GlobalHeader isListingList={false} />
 					</Grid>
 
-					<Grid item>
+					<Grid item sx={{ paddingTop: "20px" }}>
 						<Grid
 							container
 							direction='row'
@@ -90,9 +90,6 @@ const CompleteReviewPage = () => {
 								<Reviews reviews={reviewDetails} />
 							</Grid>
 						</Grid>
-					</Grid>
-					<Grid item>
-						<Footer />
 					</Grid>
 				</Grid>
 			</Container>
