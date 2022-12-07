@@ -1,8 +1,27 @@
 import StarIcon from "@mui/icons-material/Star";
 import PersonIcon from "@mui/icons-material/Person";
-import { Button, Container, Grid, Typography } from "@mui/material";
+import dayjs, { Dayjs } from "dayjs";
+import {
+	Button,
+	Container,
+	Dialog,
+	DialogContent,
+	DialogTitle,
+	FormControl,
+	Grid,
+	MenuItem,
+	Popover,
+	Select,
+	TextField,
+	Typography,
+	InputLabel,
+} from "@mui/material";
 import Paper from "@mui/material/Paper";
-const text = "Customer Reviews";
+import { useState } from "react";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import CompleteReviewPage from "../../pages/CompleteReviewPage";
 
 function SellerInfo(props: any) {
 	return (
@@ -11,7 +30,6 @@ function SellerInfo(props: any) {
 		</div>
 	);
 }
-
 const classes = {
 	paper: {
 		p: 0.5,
@@ -27,6 +45,37 @@ const classes = {
 };
 
 export default function TotalReviewMenu() {
+	const [open, setOpen] = useState(false);
+	const [messageValue, setMessageValue] = useState("");
+	const [stars, setStars] = useState(0);
+	const [date, setDate] = useState<Dayjs>(dayjs("2014-08-18T21:11:54"));
+	const [usernameValue, setUsernameValue] = useState("");
+	const [verified, setVerified] = useState(0);
+
+	const openReviewSubmission = () => {
+		setOpen(true);
+	};
+
+	const closeReviewSubmission = () => {
+		setOpen(false);
+	};
+
+	const changeMessageValue = (data: string) => {
+		setMessageValue(data);
+	};
+	const changeUsernameValue = (data: string) => {
+		setUsernameValue(data);
+	};
+	const changeStarValue = (data: number) => {
+		setStars(data);
+	};
+	const changeVerifiedValue = (data: number) => {
+		setVerified(data);
+	};
+	const changeDate = (value: Dayjs) => {
+		setDate(value);
+	};
+
 	return (
 		<Paper
 			sx={{
@@ -60,10 +109,213 @@ export default function TotalReviewMenu() {
 				<p>Please share your thoughts with others.</p>
 
 				<Grid style={{ textAlign: "center" }}>
-					<Button style={{ background: "lightgray", color: "black" }}>
+					<Button
+						style={{ background: "lightgray", color: "black" }}
+						onClick={openReviewSubmission}
+					>
 						Submit a Review
 					</Button>
-					{/* <p className= 'Submit_Review'> <a href = "/reviewbutton">Submit a Review </a></p> */}
+					<Dialog
+						open={open}
+						onClose={closeReviewSubmission}
+						sx={{ backgroundColor: "" }}
+					>
+						<DialogTitle sx={{ backgroundColor: "#1E1E1E", color: "white" }}>
+							Seller Review
+						</DialogTitle>
+						<DialogContent sx={{ backgroundColor: "#1E1E1E", color: "white" }}>
+							<Grid
+								container
+								direction='column'
+								justifyContent='center'
+								alignItems='center'
+								sx={{ paddingTop: "10px" }}
+							>
+								<Grid
+									item
+									sx={{
+										paddingBottom: "10px",
+										width: "300px",
+									}}
+								>
+									<FormControl fullWidth size='small'>
+										<InputLabel sx={{ color: "white" }}>Stars</InputLabel>
+										<Select
+											value={stars}
+											label='Stars'
+											onChange={(value) =>
+												changeStarValue(value.target.value as number)
+											}
+											sx={{
+												color: "white",
+												".MuiOutlinedInput-notchedOutline": {
+													borderColor: "white",
+												},
+												"&:hover .MuiOutlinedInput-notchedOutline": {
+													borderColor: "white",
+												},
+												"& .MuiSvgIcon-root": {
+													color: "white",
+												},
+											}}
+										>
+											<MenuItem value={1}>One</MenuItem>
+											<MenuItem value={2}>Two</MenuItem>
+											<MenuItem value={3}>Three</MenuItem>
+											<MenuItem value={4}>Four</MenuItem>
+											<MenuItem value={5}>Five</MenuItem>
+										</Select>
+									</FormControl>
+								</Grid>
+								<Grid item sx={{ paddingBottom: "10px", width: "300px" }}>
+									<TextField
+										label='Username'
+										fullWidth
+										value={usernameValue}
+										onChange={(value) =>
+											changeUsernameValue(value.target.value)
+										}
+										variant='outlined'
+										InputLabelProps={{
+											style: { color: "white" },
+										}}
+										sx={{
+											input: {
+												color: "white",
+											},
+											color: "white",
+											".MuiOutlinedInput-notchedOutline": {
+												borderColor: "white",
+											},
+											"&:hover .MuiOutlinedInput-notchedOutline": {
+												borderColor: "white",
+											},
+										}}
+									/>
+								</Grid>
+
+								<Grid item sx={{ paddingBottom: "10px", width: "300px" }}>
+									<Grid
+										container
+										direction='row'
+										justifyContent='center'
+										alignItems='center'
+										sx={{ width: "100%" }}
+									>
+										<Grid item sx={{ width: "150px" }}>
+											<LocalizationProvider dateAdapter={AdapterDayjs}>
+												<DesktopDatePicker
+													label='Date desktop'
+													inputFormat='MM/DD/YYYY'
+													value={date}
+													onChange={changeDate}
+													renderInput={(params) => (
+														<TextField
+															{...params}
+															InputLabelProps={{
+																style: { color: "white" },
+															}}
+															sx={{
+																input: {
+																	color: "white",
+																},
+																color: "white",
+																".MuiOutlinedInput-notchedOutline": {
+																	borderColor: "white",
+																},
+																"&:hover .MuiOutlinedInput-notchedOutline": {
+																	borderColor: "white",
+																},
+																"& .MuiSvgIcon-root": {
+																	color: "white",
+																},
+															}}
+														/>
+													)}
+												/>
+											</LocalizationProvider>
+										</Grid>
+										<Grid item sx={{ width: "150px" }}>
+											<FormControl fullWidth size='medium'>
+												<InputLabel sx={{ color: "white" }}>
+													Verified?
+												</InputLabel>
+												<Select
+													value={verified}
+													label='Verified'
+													onChange={(value) =>
+														changeVerifiedValue(value.target.value as number)
+													}
+													sx={{
+														input: {
+															color: "white",
+														},
+														color: "white",
+														".MuiOutlinedInput-notchedOutline": {
+															borderColor: "white",
+														},
+														"&:hover .MuiOutlinedInput-notchedOutline": {
+															borderColor: "white",
+														},
+														"& .MuiSvgIcon-root": {
+															color: "white",
+														},
+													}}
+												>
+													<MenuItem value={1}>True</MenuItem>
+													<MenuItem value={0}>False</MenuItem>
+												</Select>
+											</FormControl>
+										</Grid>
+									</Grid>
+								</Grid>
+
+								<Grid item sx={{ paddingBottom: "10px", width: "300px" }}>
+									<TextField
+										label='Message'
+										fullWidth
+										value={messageValue}
+										onChange={(value) => changeMessageValue(value.target.value)}
+										rows={3}
+										multiline
+										variant='outlined'
+										InputProps={{
+											style: { color: "white" },
+										}}
+										InputLabelProps={{
+											style: { color: "white" },
+										}}
+										sx={{
+											input: {
+												color: "white",
+											},
+											color: "white",
+											".MuiOutlinedInput-notchedOutline": {
+												borderColor: "white",
+											},
+											"&:hover .MuiOutlinedInput-notchedOutline": {
+												borderColor: "white",
+											},
+										}}
+									/>
+								</Grid>
+								<Button
+									variant='contained'
+									onClick={() => {
+										<CompleteReviewPage
+											name={usernameValue}
+											date={date}
+											verified={verified === 1 ? true : false}
+											message={messageValue}
+											stars={stars}
+										/>;
+									}}
+								>
+									Submit
+								</Button>
+							</Grid>
+						</DialogContent>
+					</Dialog>
 				</Grid>
 			</Grid>
 			<p className='sellertitle'>Seller Profile</p>

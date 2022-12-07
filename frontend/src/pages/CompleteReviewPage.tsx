@@ -6,7 +6,16 @@ import { Grid, Container } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import Footer from "../components/Footer";
+import { useEffect } from "react";
+import dayjs, { Dayjs } from "dayjs";
 
+type Props = {
+	name?: string;
+	date?: Dayjs;
+	verified?: boolean;
+	message?: string;
+	stars?: number;
+};
 const theme = createTheme({
 	palette: {
 		primary: {
@@ -17,7 +26,7 @@ const theme = createTheme({
 const reviewDetails = [
 	{
 		name: "boatluver1855",
-		date: "Nov. 18, 2019",
+		date: dayjs("Nov. 18, 2019"),
 		verified: true,
 		message:
 			"Merchandise was well kept. Very knowledgable on engines. Would buy from again.",
@@ -25,7 +34,7 @@ const reviewDetails = [
 	},
 	{
 		name: "mmregan511",
-		date: "Jan. 6, 2021",
+		date: dayjs("Jan. 6, 2021"),
 		verified: true,
 		message:
 			"Arrived at the place to take a look at his stuff. Didn't tell me in advance that he was going to be late, so I ended up waiting for two hours before he got to our meeting location.",
@@ -33,7 +42,7 @@ const reviewDetails = [
 	},
 	{
 		name: "jaxjil_xXx_4154",
-		date: "Jun. 19, 2021",
+		date: dayjs("Jun. 19, 2021"),
 		verified: true,
 		message:
 			"Got what I wanted. Case was damaged on the side, which wasn't told on the listing.",
@@ -41,7 +50,18 @@ const reviewDetails = [
 	},
 ];
 
-const CompleteReviewPage = () => {
+const CompleteReviewPage = (props: Props) => {
+	const { name, date, verified, message, stars } = props;
+	const temp = {
+		name: name,
+		date: date,
+		verified: verified,
+		message: message,
+		stars: stars,
+	};
+	useEffect(() => {
+		reviewDetails.push(temp);
+	});
 	return (
 		<ThemeProvider theme={theme}>
 			<Container

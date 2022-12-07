@@ -4,12 +4,13 @@ import LikeCount from "./LikeCount/LikeCount";
 import StarIcon from "@mui/icons-material/Star";
 import Paper from "@mui/material/Paper";
 import { Grid, Container, Typography, Box } from "@mui/material";
+import dayjs, { Dayjs } from "dayjs";
 
 type Props = { reviews: Array<reviewDetails> };
 
 type reviewDetails = {
 	name: string;
-	date: string;
+	date: Dayjs | null;
 	verified: boolean;
 	message: string;
 	stars: number;
@@ -65,7 +66,7 @@ const Reviews = (props: Props) => {
 						) : null}
 						<Typography> {item.name}</Typography>
 
-						<Typography> {item.date}</Typography>
+						<Typography>{dayjs(item.date).format("MMM. D YYYY")}</Typography>
 
 						<Typography>
 							{item.verified ? "Verified Purchase" : "Not Verified Purchase"}
