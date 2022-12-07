@@ -26,19 +26,7 @@ import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
-// declare global {
-// 	listingNum;
-//   }
-
-//   export {};
-
 const Listings = [
-	{
-		listingTitle: "Bingo's Lawncare Service",
-		listingLocation: "Baton Rouge",
-		listingDatePosted: "9/24/22",
-		image: lawnMower,
-	},
 	{
 		listingTitle: "Billy the Barber",
 		listingLocation: "Houma",
@@ -46,40 +34,10 @@ const Listings = [
 		image: barber,
 	},
 	{
-		listingTitle: "Mark's Auto Detailing",
-		listingLocation: "Central",
-		listingDatePosted: "12/18/21",
-		image: auto,
-	},
-	{
-		listingTitle: "Joe's Carwash",
-		listingLocation: "Dulac",
-		listingDatePosted: "08/24/20",
-		image: carWash,
-	},
-	{
-		listingTitle: "Lindsey's Pressure Washing",
-		listingLocation: "Raceland",
-		listingDatePosted: "08/08/08",
-		image: pressWash,
-	},
-	{
-		listingTitle: "Sally's Nails",
-		listingLocation: "Gonzales",
-		listingDatePosted: "05/21/21",
-		image: nails,
-	},
-	{
-		listingTitle: "Johnathan the travelling Clown",
-		listingLocation: "Denham Springs",
-		listingDatePosted: "9/10/21",
-		image: clown,
-	},
-	{
-		listingTitle: "Tim and Eric Awesome Show Great Job",
+		listingTitle: "Bingo's Lawncare Service",
 		listingLocation: "Baton Rouge",
-		listingDatePosted: "07/25/05",
-		image: timEric,
+		listingDatePosted: "9/24/22",
+		image: lawnMower,
 	},
 	{
 		listingTitle: "Dr.Shah's tutoring services",
@@ -88,16 +46,54 @@ const Listings = [
 		image: lsu,
 	},
 	{
+		listingTitle: "Joe's Carwash",
+		listingLocation: "Dulac",
+		listingDatePosted: "08/24/20",
+		image: carWash,
+	},
+	{
+		listingTitle: "Johnathan the travelling Clown",
+		listingLocation: "Denham Springs",
+		listingDatePosted: "9/10/21",
+		image: clown,
+	},
+	{
+		listingTitle: "Lindsey's Pressure Washing",
+		listingLocation: "Raceland",
+		listingDatePosted: "08/08/08",
+		image: pressWash,
+	},
+	{
+		listingTitle: "Mark's Auto Detailing",
+		listingLocation: "Central",
+		listingDatePosted: "12/18/21",
+		image: auto,
+	},
+	{
 		listingTitle: "Michael the Massager",
 		listingLocation: "Massagetown",
 		listingDatePosted: "09/09/21",
 		image: michael,
 	},
+	{
+		listingTitle: "Sally's Nails",
+		listingLocation: "Gonzales",
+		listingDatePosted: "05/21/21",
+		image: nails,
+	},
+	{
+		listingTitle: "Tim and Eric Awesome Show Great Job",
+		listingLocation: "Baton Rouge",
+		listingDatePosted: "07/25/05",
+		image: timEric,
+	},
 ];
 
-// listingNum = Listings.length;
 
-const ListingPageListings = (props: Props) => {
+export var listingNum = Listings.length;
+
+
+export const ListingPageListings = (props: Props) => {
 	const navigate = useNavigate();
 	return (
 		<Container sx={{ width: "1000px" }}>
@@ -119,8 +115,8 @@ const ListingPageListings = (props: Props) => {
 							sx={{
 								width: "100%",
 								height: "100%",
-								backgroundColor: "grey",
-								"&:hover": { backgroundColor: "#5d8c55" },
+								backgroundColor: "#423F3E",
+								"&:hover": { backgroundColor: "#362222" },
 							}}
 							onClick={() => {
 								navigate("/listingDetails");
@@ -146,18 +142,19 @@ const ListingPageListings = (props: Props) => {
 												sx={{
 													margin: "1px",
 													width: "100%",
+													color: "white"
 												}}
 											>
 												{listing.listingTitle}
 											</Typography>
-											<Typography textAlign={"start"} sx={{ margin: "1px" }}>
+											<Typography textAlign={"start"} sx={{ margin: "1px" , color: "white"}}>
 												{listing.listingLocation}
 											</Typography>
-											<Typography textAlign={"start"} sx={{ margin: "1px" }}>
+											<Typography textAlign={"start"} sx={{ margin: "1px" , color: "white"}}>
 												{listing.listingDatePosted}
 											</Typography>
 										</Grid>
-										<Grid item xs={4} sx={{ width: "100%", height: "100%" }}>
+										<Grid item xs={4} sx={{ width: "100%", height: "100%" , color: "white"}}>
 											<img
 												src={listing.image}
 												style={{

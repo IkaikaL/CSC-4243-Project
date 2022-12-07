@@ -17,7 +17,7 @@ const Listings = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container //Contains the whole file i think
+			<Container 
 				disableGutters={true}
 				sx={{
 					minWidth: "100%",
@@ -44,24 +44,9 @@ const Listings = () => {
 					<Grid
 						item
 						alignItems='center'
-						sx={{
-							width: "100%",
-							height: "100%",
-							backgroundColor: "#1E1E1E",
-							marginBottom: "8px",
-						}}
-					>
-						<ListingPageSearchBar />
-					</Grid>
-					<Grid
-						item
-						alignItems='center'
 						sx={{ width: "100%", height: "100%", backgroundColor: "#1E1E1E" }}
 					>
 						<ListingPageListings />
-					</Grid>
-					<Grid item sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
-						<ListingPageChange />
 					</Grid>
 				</Grid>
 			</Container>

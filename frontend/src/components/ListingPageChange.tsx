@@ -1,5 +1,7 @@
 import React from "react";
+import ListingPageListings, { listingNum } from "./ListingPageListings";
 import { Container, Grid, Typography, Button } from "@mui/material";
+
 
 const Footer = () => {
 	return (
@@ -12,7 +14,7 @@ const Footer = () => {
 			>
 				<Grid item>
 					
-						<Button variant="contained" component="label" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }} 
+						<Button variant="contained" component="label" sx={{ width: "100px", height:"65px", color: "white", background:"#423F3E", "&:hover": { background: "#362222" } , fontWeight:"bold" }} 
                         onClick={() => {
 								alert("clicked");
 							}}>First</Button>
@@ -20,7 +22,7 @@ const Footer = () => {
 				</Grid>
 				<Grid item>
 					
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "white", background:"#423F3E", "&:hover": { background: "#362222" } , fontWeight:"bold" }}
                         onClick={() => {
                             alert("clicked");
                         }}>Prev</Button>
@@ -28,15 +30,15 @@ const Footer = () => {
 				</Grid>
 				<Grid item>
 					
-						<Button variant="contained" sx={{ width: "200px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+						<Button variant="contained" sx={{ width: "200px", height:"65px", color: "white", background:"#423F3E", "&:hover": { background: "#362222" } , fontWeight:"bold" }}
                         onClick={() => {
                             alert("clicked");
-                        }}>1-8 of 8</Button>
+                        }}>yes</Button>
 					
 				</Grid>
 				<Grid item>
 					
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "white", background:"#423F3E", "&:hover": { background: "#362222" } , fontWeight:"bold" }}
                         onClick={() => {
                             alert("clicked");
                         }}>
@@ -46,7 +48,7 @@ const Footer = () => {
 				</Grid>
                 <Grid item>
 					
-						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "black", background:"#5d8c55", "&:hover": { background: "#73a767" } , fontWeight:"bold" }}
+						<Button variant="contained" sx={{ width: "100px", height:"65px", color: "white", background:"#423F3E", "&:hover": { background: "#362222" } , fontWeight:"bold" }}
                         onClick={() => {
                             alert("clicked");
                         }}>
