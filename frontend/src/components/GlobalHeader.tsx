@@ -93,7 +93,6 @@ const GlobalHeader = (props: Props) => {
 									color: "white",
 								}}
 								onClick={() => {
-									navigate("/listingDetails")
 									if(search === true && bodyTxt === true){
 										navigate("/listingDetails");
 									}
