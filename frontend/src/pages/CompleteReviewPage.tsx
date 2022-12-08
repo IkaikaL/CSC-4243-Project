@@ -6,7 +6,10 @@ import { Grid, Container } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import Footer from "../components/Footer";
+import { useEffect } from "react";
+import dayjs, { Dayjs } from "dayjs";
 
+type Props = {};
 const theme = createTheme({
 	palette: {
 		primary: {
@@ -41,7 +44,7 @@ const reviewDetails = [
 	},
 ];
 
-const CompleteReviewPage = () => {
+const CompleteReviewPage = (props: Props) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<Container
