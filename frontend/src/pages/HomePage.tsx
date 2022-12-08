@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import GlobalHeader from "../components/GlobalHeader";
 import HomePageHeader from "../components/HomePageHeader";
@@ -299,10 +299,9 @@ const HomePage = () => {
 					>
 						{subCategories}
 					</Grid>
-					<Grid item sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
-						<Footer />
-					</Grid>
+					<Grid item sx={{ paddingTop: "10px", paddingBottom: "10px" }}></Grid>
 				</Grid>
+				<Footer />
 			</Container>
 		</ThemeProvider>
 	);
