@@ -22,6 +22,7 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import CompleteReviewPage from "../../pages/CompleteReviewPage";
+import Reviews from "../Reviews/Reviews";
 
 function SellerInfo(props: any) {
 	return (
@@ -48,7 +49,7 @@ export default function TotalReviewMenu() {
 	const [open, setOpen] = useState(false);
 	const [messageValue, setMessageValue] = useState("");
 	const [stars, setStars] = useState(0);
-	const [date, setDate] = useState<Dayjs>(dayjs("2014-08-18T21:11:54"));
+	const [date, setDate] = useState("");
 	const [usernameValue, setUsernameValue] = useState("");
 	const [verified, setVerified] = useState(0);
 
@@ -72,7 +73,7 @@ export default function TotalReviewMenu() {
 	const changeVerifiedValue = (data: number) => {
 		setVerified(data);
 	};
-	const changeDate = (value: Dayjs) => {
+	const changeDate = (value: string) => {
 		setDate(value);
 	};
 
@@ -203,37 +204,28 @@ export default function TotalReviewMenu() {
 										sx={{ width: "100%" }}
 									>
 										<Grid item sx={{ width: "150px" }}>
-											<LocalizationProvider dateAdapter={AdapterDayjs}>
-												<DesktopDatePicker
-													label='Date desktop'
-													inputFormat='MM/DD/YYYY'
-													value={date}
-													onChange={changeDate}
-													renderInput={(params) => (
-														<TextField
-															{...params}
-															InputLabelProps={{
-																style: { color: "white" },
-															}}
-															sx={{
-																input: {
-																	color: "white",
-																},
-																color: "white",
-																".MuiOutlinedInput-notchedOutline": {
-																	borderColor: "white",
-																},
-																"&:hover .MuiOutlinedInput-notchedOutline": {
-																	borderColor: "white",
-																},
-																"& .MuiSvgIcon-root": {
-																	color: "white",
-																},
-															}}
-														/>
-													)}
-												/>
-											</LocalizationProvider>
+											<TextField
+												label='Date'
+												fullWidth
+												value={date}
+												onChange={(value) => changeDate(value.target.value)}
+												variant='outlined'
+												InputLabelProps={{
+													style: { color: "white" },
+												}}
+												sx={{
+													input: {
+														color: "white",
+													},
+													color: "white",
+													".MuiOutlinedInput-notchedOutline": {
+														borderColor: "white",
+													},
+													"&:hover .MuiOutlinedInput-notchedOutline": {
+														borderColor: "white",
+													},
+												}}
+											/>
 										</Grid>
 										<Grid item sx={{ width: "150px" }}>
 											<FormControl fullWidth size='medium'>
@@ -302,13 +294,14 @@ export default function TotalReviewMenu() {
 								<Button
 									variant='contained'
 									onClick={() => {
-										<CompleteReviewPage
+										<Reviews
 											name={usernameValue}
 											date={date}
-											verified={verified === 1 ? true : false}
-											message={messageValue}
 											stars={stars}
+											message={messageValue}
+											verified={verified === 1 ? true : false}
 										/>;
+										closeReviewSubmission();
 									}}
 								>
 									Submit

@@ -6,19 +6,27 @@ import Paper from "@mui/material/Paper";
 import { Grid, Container, Typography, Box } from "@mui/material";
 import dayjs, { Dayjs } from "dayjs";
 
-type Props = { reviews: Array<reviewDetails> };
+type Props = {
+	reviews?: Array<reviewDetails>;
+	name?: string;
+	date?: string;
+	verified?: boolean;
+	message?: string;
+	stars?: number;
+};
 
 type reviewDetails = {
 	name: string;
-	date: Dayjs | null;
+	date: string;
 	verified: boolean;
 	message: string;
 	stars: number;
 };
 
 const Reviews = (props: Props) => {
-	const { reviews } = props;
-
+	const { reviews, name, date, verified, message, stars } = props;
+	console.log(reviews);
+	console.log(name);
 	return (
 		<Container sx={{ width: "770px", minHeight: "700px" }}>
 			<Grid
@@ -28,7 +36,61 @@ const Reviews = (props: Props) => {
 				justifyContent='space-evenly'
 				sx={{ width: "100%", height: "100%" }}
 			>
-				{reviews.map((item, index) => (
+				{reviews === undefined
+					? null
+					: reviews.map((item, index) => (
+							<Grid
+								item
+								sx={{
+									padding: "10px",
+									backgroundColor: "#423F3E",
+									borderRadius: "3px",
+									color: "white",
+									minWidth: "100%",
+								}}
+							>
+								{item.stars === 1 ? (
+									<Container disableGutters={true} sx={{ color: "yellow" }}>
+										<StarIcon />
+									</Container>
+								) : null}
+								{item.stars === 2 ? (
+									<Container disableGutters={true} sx={{ color: "yellow" }}>
+										<StarIcon /> <StarIcon />
+									</Container>
+								) : null}
+								{item.stars === 3 ? (
+									<Container disableGutters={true} sx={{ color: "yellow" }}>
+										<StarIcon /> <StarIcon /> <StarIcon />
+									</Container>
+								) : null}
+								{item.stars === 4 ? (
+									<Container disableGutters={true} sx={{ color: "yellow" }}>
+										<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
+									</Container>
+								) : null}
+								{item.stars === 5 ? (
+									<Container disableGutters={true} sx={{ color: "yellow" }}>
+										<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />{" "}
+										<StarIcon />
+									</Container>
+								) : null}
+								<Typography> {item.name}</Typography>
+
+								<Typography>
+									{dayjs(item.date).format("MMM. D YYYY")}
+								</Typography>
+
+								<Typography>
+									{item.verified
+										? "Verified Purchase"
+										: "Not Verified Purchase"}
+								</Typography>
+								<Typography>{item.message}</Typography>
+								<LikeCount />
+							</Grid>
+					  ))}
+				{name === undefined ? null : (
 					<Grid
 						item
 						sx={{
@@ -39,42 +101,42 @@ const Reviews = (props: Props) => {
 							minWidth: "100%",
 						}}
 					>
-						{item.stars === 1 ? (
+						{stars === 1 ? (
 							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon />
 							</Container>
 						) : null}
-						{item.stars === 2 ? (
+						{stars === 2 ? (
 							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon />
 							</Container>
 						) : null}
-						{item.stars === 3 ? (
+						{stars === 3 ? (
 							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
-						{item.stars === 4 ? (
+						{stars === 4 ? (
 							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
-						{item.stars === 5 ? (
+						{stars === 5 ? (
 							<Container disableGutters={true} sx={{ color: "yellow" }}>
 								<StarIcon /> <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon />
 							</Container>
 						) : null}
-						<Typography> {item.name}</Typography>
+						<Typography> {name}</Typography>
 
-						<Typography>{dayjs(item.date).format("MMM. D YYYY")}</Typography>
+						<Typography>{dayjs(date).format("MMM. D YYYY")}</Typography>
 
 						<Typography>
-							{item.verified ? "Verified Purchase" : "Not Verified Purchase"}
+							{verified ? "Verified Purchase" : "Not Verified Purchase"}
 						</Typography>
-						<Typography>{item.message}</Typography>
+						<Typography>{message}</Typography>
 						<LikeCount />
 					</Grid>
-				))}
+				)}
 			</Grid>
 		</Container>
 	);
