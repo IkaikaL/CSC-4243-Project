@@ -13,6 +13,8 @@ import logo from "./Files/KC- K.png";
 type Props = {
 	isListingList: boolean;
 };
+var search = false;
+var bodyTxt = false;
 
 const GlobalHeader = (props: Props) => {
 	const { isListingList } = props;
@@ -74,13 +76,26 @@ const GlobalHeader = (props: Props) => {
 										"& > fieldset": { borderColor: "white", color: "white" },
 									},
 								}}
-							></TextField>
+								onClick={() => {
+									search = true;
+								}}
+								onKeyDown={()  =>{
+									bodyTxt = true;
+								}}
+								
+							>
+							</TextField>
 						</Grid>
 						<Grid item>
 							<Button
 								variant='outlined'
 								sx={{
 									color: "white",
+								}}
+								onClick={() => {
+									if(search === true && bodyTxt === true){
+										navigate("/listingDetails");
+									}
 								}}
 							>
 								Search
